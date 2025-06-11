@@ -1,0 +1,146 @@
+body {
+            background: linear-gradient(135deg, #ffe4ec 0%, #fffbea 100%);
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        .carta {
+            width: 420px;
+            min-height: 620px;
+            background: #fffbea;
+            border: 4px solid #e9a6c7;
+            border-radius: 32px;
+            box-shadow: 0 8px 32px rgba(233,166,199,0.18), 0 1.5px 0 #e9a6c7 inset;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s cubic-bezier(.68,-0.55,.27,1.55), box-shadow 0.3s;
+            user-select: none;
+            padding-bottom: 40px;
+        }
+        .carta:hover {
+            transform: scale(1.03) rotate(-1deg);
+            box-shadow: 0 16px 48px 0 rgba(233,166,199,0.25), 0 1.5px 0 #e9a6c7 inset;
+        }
+        .corazon, .corazon2, .corazon3, .corazon4 {
+            position: absolute;
+            background: linear-gradient(135deg, #ffb6d5 60%, #e9a6c7 100%);
+            clip-path: polygon(50% 0%, 100% 35%, 82% 100%, 50% 80%, 18% 100%, 0% 35%);
+            opacity: 0.7;
+            animation: latir 1.5s infinite;
+            z-index: 2;
+        }
+        .corazon {
+            width: 48px; height: 48px; left: 18px; top: 18px;
+        }
+        .corazon2 {
+            width: 32px; height: 32px; right: 22px; top: 38px; animation-delay: 0.7s;
+        }
+        .corazon3 {
+            width: 28px; height: 28px; left: 38px; bottom: 38px; animation-delay: 1s;
+        }
+        .corazon4 {
+            width: 36px; height: 36px; right: 32px; bottom: 38px; animation-delay: 0.3s;
+        }
+        @keyframes latir {
+            0%, 100% { transform: scale(1);}
+            20% { transform: scale(1.2);}
+            40% { transform: scale(0.95);}
+            60% { transform: scale(1.1);}
+            80% { transform: scale(0.98);}
+        }
+        .hello-kitty-svg {
+            width: 140px;
+            height: 130px;
+            margin-top: 32px;
+            margin-bottom: 16px;
+            opacity: 0;
+            transform: translateY(-40px) scale(0.8) rotate(-8deg);
+            transition: opacity 0.8s cubic-bezier(.68,-0.55,.27,1.55), transform 0.8s cubic-bezier(.68,-0.55,.27,1.55);
+            filter: drop-shadow(0 2px 12px #e9a6c7aa);
+            z-index: 3;
+        }
+        .carta.mostrar .hello-kitty-svg {
+            opacity: 1;
+            transform: translateY(0) scale(1) rotate(0deg);
+        }
+        .titulo-carta {
+            font-size: 2.3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #e9a6c7;
+            letter-spacing: 2px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s 0.2s, transform 0.7s 0.2s;
+            z-index: 3;
+        }
+        .carta.mostrar .titulo-carta {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .mensaje-disculpa {
+            opacity: 0;
+            font-size: 1.3rem;
+            color: #b45e8c;
+            margin-top: 18px;
+            text-align: center;
+            max-width: 320px;
+            line-height: 1.5;
+            transition: opacity 0.7s 0.4s;
+            pointer-events: none;
+            z-index: 3;
+        }
+        .carta.mostrar .mensaje-disculpa {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .btn-ok {
+            margin-top: 22px;
+            padding: 10px 28px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(90deg, #e9a6c7 60%, #ffb6d5 100%);
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 12px #e9a6c7aa;
+            transition: background 0.3s, transform 0.2s;
+            animation: aparecerBtn 0.7s;
+        }
+        .btn-ok:hover {
+            background: linear-gradient(90deg, #ffb6d5 60%, #e9a6c7 100%);
+            transform: scale(1.07);
+        }
+        @keyframes aparecerBtn {
+            from { opacity: 0; transform: scale(0.7);}
+            to { opacity: 1; transform: scale(1);}
+        }
+        /* Efecto de brillo */
+        .carta::after {
+            content: "";
+            position: absolute;
+            left: -60px;
+            top: -60px;
+            width: 120%;
+            height: 120%;
+            background: linear-gradient(120deg, rgba(255,255,255,0.13) 0%, rgba(255,255,255,0.01) 60%);
+            pointer-events: none;
+            z-index: 1;
+            animation: brillo 3.5s linear infinite;
+        }
+        @keyframes brillo {
+            0% { transform: translateX(-60px) translateY(-60px) rotate(0deg);}
+            100% { transform: translateX(60px) translateY(60px) rotate(2deg);}
+        }
+        @media (max-width: 500px) {
+            .carta { width: 98vw; min-height: 80vw; }
+            .hello-kitty-svg { width: 90px; height: 80px; }
+        }

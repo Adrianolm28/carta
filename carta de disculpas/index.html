@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Carta de Disculpas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="carta" id="carta">
+        <div class="corazon"></div>
+        <div class="corazon corazon2"></div>
+        <div class="corazon corazon3"></div>
+        <div class="corazon corazon4"></div>
+        <div class="hello-kitty-svg" aria-label="Hello Kitty">
+            <svg viewBox="0 0 200 180" width="140" height="130">
+                <!-- Cabeza -->
+                <ellipse cx="100" cy="90" rx="80" ry="70" fill="#fff" stroke="#222" stroke-width="3"/>
+                <!-- Oreja izquierda -->
+                <ellipse cx="35" cy="35" rx="22" ry="30" fill="#fff" stroke="#222" stroke-width="3" transform="rotate(-15 35 35)"/>
+                <!-- Oreja derecha -->
+                <ellipse cx="165" cy="35" rx="22" ry="30" fill="#fff" stroke="#222" stroke-width="3" transform="rotate(15 165 35)"/>
+                <!-- Ojo izquierdo -->
+                <ellipse cx="65" cy="100" rx="10" ry="14" fill="#222"/>
+                <!-- Ojo derecho -->
+                <ellipse cx="135" cy="100" rx="10" ry="14" fill="#222"/>
+                <!-- Nariz -->
+                <ellipse cx="100" cy="120" rx="9" ry="6" fill="#f7c948" stroke="#222" stroke-width="2"/>
+                <!-- Bigotes izquierdos -->
+                <rect x="30" y="110" width="30" height="3" rx="2" fill="#222" transform="rotate(-10 45 111.5)"/>
+                <rect x="30" y="120" width="30" height="3" rx="2" fill="#222" transform="rotate(0 45 121.5)"/>
+                <rect x="30" y="130" width="30" height="3" rx="2" fill="#222" transform="rotate(10 45 131.5)"/>
+                <!-- Bigotes derechos -->
+                <rect x="140" y="110" width="30" height="3" rx="2" fill="#222" transform="rotate(10 155 111.5)"/>
+                <rect x="140" y="120" width="30" height="3" rx="2" fill="#222" transform="rotate(0 155 121.5)"/>
+                <rect x="140" y="130" width="30" height="3" rx="2" fill="#222" transform="rotate(-10 155 131.5)"/>
+                <!-- Lazo animado -->
+                <g>
+                    <ellipse class="lazo1" cx="160" cy="55" rx="13" ry="10" fill="#e9a6c7" stroke="#b45e8c" stroke-width="2"/>
+                    <ellipse class="lazo2" cx="180" cy="55" rx="10" ry="13" fill="#e9a6c7" stroke="#b45e8c" stroke-width="2"/>
+                    <circle class="lazo3" cx="170" cy="55" r="8" fill="#fff" stroke="#b45e8c" stroke-width="2"/>
+                </g>
+            </svg>
+        </div>
+        <div class="titulo-carta">CARTA DE DISCULPAS</div>
+        <div class="mensaje-disculpa" id="mensaje">
+            Lamento mucho lo sucedido.<br>
+            ¿Me disculpas? 💖
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
